@@ -1,0 +1,124 @@
+body {
+    background-color:rgb(79, 79, 79);
+}
+
+div.topbar {
+    display:inline-block;
+    background-color:rgb(144, 144, 144);
+    border-radius: 10px;
+    box-shadow: 10px 7px 7px black;
+    width:1920px;
+}
+
+.logo, .loupe, .topbuttons {
+    display:inline-block;
+}
+
+.logo {
+    text-align: left;
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.logo img {
+    width: 60%;
+}
+
+.loupe img {
+    position: absolute;
+    margin-left: 220px;
+    margin-top: 45px;
+}
+
+.topbuttons {
+    padding: 10px;
+    float: right;
+}
+
+.reload {
+    width:20px;
+    display: block;
+    padding-bottom: 115px;
+}
+
+div.left-menu, div.right-menu {
+    background-color:rgb(144, 144, 144);
+    border-radius:10px;
+    box-shadow: 10px 7px 7px black;
+    width:200px;
+    display:inline-block;
+
+}
+
+div.left-menu {
+    margin-right: 30px;
+    vertical-align:top;
+}
+
+.left-menu div {
+    text-align:center;
+    margin-top: 7px;
+}
+
+.elem img {
+    width:100px;
+    padding-bottom:10px;
+}
+.elem:first-child img {
+    padding-top:10px;
+}
+
+.elem:last-child img {
+    padding-bottom:20px;
+}
+
+div.room {
+    background-color:rgb(144, 144, 144);
+    border-radius:10px;
+    box-shadow: 10px 7px 7px black;
+    display:inline-block;
+}
+
+.room img {
+    padding: 10px;
+    width:1350px;
+}
+
+.right-menu {
+    vertical-align: top;
+    margin-left: 30px;
+    height:594px;
+}
+
+.brick {
+    background-repeat: repeat;
+    background-image: url(resources/brick.jpg);
+    text-align: center;
+    width: 170px;
+    height: 100px;
+}
+div.popup {
+    width:600px;
+    background-color:rgb(139, 252, 141);
+    border-radius:10px;
+    padding:15px 15px 50px 15px;
+    position:absolute;
+    box-shadow: 10px 7px 7px black;
+    margin-top:-100px;
+    margin-left:130px;
+}
+
+.popup p {
+    margin:0px 0px 5px 0px;
+    font-size:18px;
+}
+
+.popup .game-field {
+    width:300px;
+    margin-right:10px;
+}
+
+.bword {
+    font-size:30px;
+}

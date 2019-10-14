@@ -1,0 +1,26 @@
+td {width:61px; height:65px;border: 1px solid transparent;}
+p {margin:0;}
+h1 {text-align:center;}
+.fill {border:1px solid black;}
+.sym {text-align:center; font-size:x-large;}
+.num {text-align:left; font-size:small;}
+.masse {text-align:right; font-size: x-small;}
+.alcalin {background-color:lightcoral;}
+.alca-ter {background-color:burlywood;}
+.transition {background-color: pink;}
+.pauvre {background-color:lightgray;}
+.metalloide {background-color:lightseagreen;}
+.non-met {background-color:lightgreen;}
+.halogene {background-color:khaki;}
+.noble {background-color:lightskyblue;}
+.lanthanide {background-color: plum;}
+.actinide {background-color:palevioletred;}
+.non-classe {background-color:whitesmoke;}
+div.empty-leg {display:inline-block;}
+div.legende {display:inline-block; text-align:center; background-color:whitesmoke; border-top: 4px solid lightslategray;}
+table.legende, table.empy-leg {border-spacing: 2px 0px;}
+table.legende td, table.empty-leg td {width:94px;}
+p.legende, p.empty-leg {text-align:center; font-size:14px;}
+div.empty-leg {padding:10px 30px;}
+div.bio {float:right;}
+div.bio p {font-style:italic; font-size:14px;}
