@@ -1,0 +1,52 @@
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    width: 10%;
+    text-align: center;
+    position: relative;
+}
+
+nav ul::after {
+    display: table;
+    clear: both;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 10px 0px;
+}
+
+nav a:hover {
+    color: #29BB9C;
+    border-bottom: 2px solid #80CAFF;
+}
+
+.sous {
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+}
+nav > ul li:hover .sous {
+    display: block;
+}
+.sous li {
+    width: 100%;
+    text-align: left;
+}
+.sous a {
+    padding: 10px;
+}
+.sous a:hover {
+    border-bottom: none;
+    background-color: RGBa(41,187,156,0.1);
+}
+
+ul {
+    padding-inline-start: 0px;
+}
