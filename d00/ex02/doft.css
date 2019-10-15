@@ -123,6 +123,11 @@ div.popup {
     font-size:30px;
 }
 
-.surligne{
+.surligne {
     text-shadow: 7px 7px 5px rgb(255, 50, 18);
-    }
+}
+
+.oeil {
+    border: 5px solid red;
+    border-radius: 3px;
+}
