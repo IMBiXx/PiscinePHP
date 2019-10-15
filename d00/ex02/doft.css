@@ -122,3 +122,7 @@ div.popup {
 .bword {
     font-size:30px;
 }
+
+.surligne{
+    text-shadow: 7px 7px 5px rgb(255, 50, 18);
+    }
