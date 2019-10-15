@@ -10,14 +10,14 @@ function ft_split($str)
 	return $ret;
 }
 
-foreach ($argv as $elem)
-    $clean = $clean.$elem." ";
+foreach ($argv as $elem){
+	if ($i)
+		$clean = $clean.$elem." ";
+	$i = 1;
+	}
 $clean = ft_split($clean);
 
 foreach ($clean as $elem)
-{
     if ($i)
         echo "$elem\n";
-    $i = 1;
-}
 ?>

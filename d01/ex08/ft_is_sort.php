@@ -1,5 +1,5 @@
 #!/usr/bin/php
-<?PHP
+<?php
 function ft_is_sort($tab) {
     $correct = $tab;
     sort($correct, SORT_STRING);
