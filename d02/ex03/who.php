@@ -1,8 +1,10 @@
 #!/usr/bin/php
 <?php
-$fd = fopen("/var/run/utmpx", "r");
+$utmpx = "/var/run/utmpx";
+$fd = fopen($utmpx, "r");
 $list = array();
-while (($bin = fread($fd, 628))){
+
+while (($bin = fread($fd, filesize($utmpx) / 6))){
     $bin = unpack("a256user/a4id/a32line/ipid/itype/I2time", $bin);
     if (strcmp($bin['type'], "7") === 0)
         array_push($list, $bin);
