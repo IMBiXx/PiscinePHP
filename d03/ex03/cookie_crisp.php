@@ -1,12 +1,22 @@
 <?php
-if (array_key_exists("action", $_GET)){
-    $tab = $_GET;
-    if (array_key_exists("name", $tab))
-        if ($tab['action'] == "set" && array_key_exists("value", $tab))
-            setcookie($tab['name'], $tab['value']);
-        else if ($tab['action'] == "get" && $_COOKIE[$tab['name']] != NULL)
-            echo ($_COOKIE[$tab['name']])."\n";
-        else if ($tab['action'] == "del")
-            setcookie($tab['name'], "", time() - 3600);
+$tab = $_GET;
+$i = 0;
+foreach($_GET as $key => $value)
+{
+    $i++;
+    if ($key == "name")
+        $name = $value;
+    else if ($key == "value")
+        $val = $value;
+    else if ($key == "action")
+        $action = $value;
+    else
+        $i = -1;
 }
+if ($i == 3 && $action == "set")
+    setcookie($name, $val);
+else if ($action == "del")
+    setcookie($name, $val, time() - 3600);
+else if ($action == "get" && $_COOKIE[$name])
+    echo $_COOKIE[$name]."\n";
 ?>
