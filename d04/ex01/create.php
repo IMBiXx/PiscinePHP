@@ -7,7 +7,7 @@ function validate($rep) {
     else
         echo $ERROR;
 }
-$path = "private/";
+$path = "../private/";
 $file = $path."passwd";
 if (isset($_POST['login']) && $_POST['login'] != NULL && isset($_POST['passwd']) && $_POST['passwd'] != NULL && isset($_POST['submit']) && $_POST['submit'] == "OK"){
     if (!file_exists($path))
