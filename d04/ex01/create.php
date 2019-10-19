@@ -9,18 +9,28 @@ function validate($rep) {
 }
 $path = "../private/";
 $file = $path."passwd";
-if (isset($_POST['login']) && $_POST['login'] != NULL && isset($_POST['passwd']) && $_POST['passwd'] != NULL && isset($_POST['submit']) && $_POST['submit'] == "OK"){
+if ($_POST['login'] != NULL && $_POST['passwd'] != NULL && $_POST['submit'] == "OK"){
+    $tab["login"] = $_POST["login"];
+    $tab["passwd"] = hash(whirlpool, $_POST["passwd"]);
+    $tab2[] = $tab;
     if (!file_exists($path))
-        mkdir($path);
+        mkpath($path);
     if (!file_exists($file))
-        file_put_contents($file, null);
-    $passwd = unserialize(file_get_contents($file));
-    if ($passwd)
-        foreach ($passwd as $elem)
-            if ($elem['login'] == $_POST['login'])
-                return (validate(0));
-    $passwd[] = array("login" => $_POST['login'], "passwd" => hash('whirlpool', $_POST['passwd']));
-    file_put_contents($file, serialize($passwd));
+        file_put_contents($file, serialize($tab2)."\n");
+    else
+    {
+        $unserialized = unserialize(file_get_contents($file));
+        $i = 0;
+        foreach ($unserialized as $elem)
+        {
+            foreach($elem as $login=>$value)
+                if ($value == $tab["login"])
+                    return (validate(0));
+            $i++;
+        }
+        $unserialized[$i] = $tab;
+        file_put_contents($file, serialize($unserialized)."\n");
+    }
     return (validate(1));
 }
 else

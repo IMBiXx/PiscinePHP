@@ -14,9 +14,12 @@ if ($_SESSION['loggued_on_user']) {
         $chat = unserialize(file_get_contents($filechat));
     }
     if ($_POST['msg']){
-    $chat[] = array("login" => $_SESSION['loggued_on_user'], "time" => time(), "chat" => $_POST['msg']);
-    file_put_contents($filechat, serialize($chat));
-    flock($filechat, LOCK_UN);
-}
+        $tab['login'] = $_SESSION['loggued_on_user'];
+        $tab['time'] = time();
+        $tab['chat'] = $_POST['msg'];
+        $chat[] = $tab;
+        file_put_contents($filechat, serialize($chat)."\n");
+        flock($filechat, LOCK_UN);
+    }
 }
 ?>

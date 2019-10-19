@@ -10,7 +10,7 @@ function validate($rep) {
 }
 $path = "../private/";
 $file = $path."passwd";
-if (isset($_POST['login']) && $_POST['login'] != NULL && isset($_POST['oldpw']) && $_POST['oldpw'] != NULL && isset($_POST['newpw']) && $_POST['newpw'] != NULL && isset($_POST['submit']) && $_POST['submit'] == "OK"){
+if ($_POST['login'] != NULL && $_POST['oldpw'] != NULL && $_POST['newpw'] != NULL && $_POST['submit'] == "OK"){
     $passwd = unserialize(file_get_contents($file));
     if ($passwd)
         foreach ($passwd as &$elem){

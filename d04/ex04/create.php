@@ -10,7 +10,7 @@ function validate($rep) {
 }
 $path = "../private/";
 $file = $path."passwd";
-if (isset($_POST['login']) && $_POST['login'] != NULL && isset($_POST['passwd']) && $_POST['passwd'] != NULL && isset($_POST['submit']) && $_POST['submit'] == "OK"){
+if ($_POST['login'] != NULL && $_POST['passwd'] != NULL && $_POST['submit'] == "OK"){
     if (!file_exists($path))
         mkdir($path);
     if (!file_exists($file))
@@ -20,7 +20,9 @@ if (isset($_POST['login']) && $_POST['login'] != NULL && isset($_POST['passwd'])
         foreach ($passwd as $elem)
             if ($elem['login'] == $_POST['login'])
                 return (validate(0));
-    $passwd[] = array("login" => $_POST['login'], "passwd" => hash('whirlpool', $_POST['passwd']));
+    $tab["login"] = $_POST['login'];
+    $tab["passwd"] = hash('whirlpool', $_POST['passwd']);
+    $passwd[] = $tab;
     file_put_contents($file, serialize($passwd));
     return (validate(1));
 }

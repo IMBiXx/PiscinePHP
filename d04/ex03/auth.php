@@ -2,7 +2,7 @@
 function auth($login, $passwd) {
 $path = "../private/";
 $file = $path."passwd";
-if (isset($login) && $login != NULL && isset($passwd) && $passwd != NULL){
+if ($login != NULL && $passwd != NULL){
     $op = unserialize(file_get_contents($file));
     if ($op)
         foreach ($op as &$elem){
