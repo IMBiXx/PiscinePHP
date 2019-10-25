@@ -14,11 +14,9 @@ function newTodo(todoName, key) {
         key = 0;
         var save = Object.keys(localStorage);
         save.sort(function(a, b){return a-b});
-        console.log(save);
         while (save[i]) {
             key = save[i];
             key++;
-            console.log("add key: " + key + " save[i]: " + save[i]);
             i++;
         }
     }
