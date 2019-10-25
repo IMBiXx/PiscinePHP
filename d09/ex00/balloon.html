@@ -1,0 +1,75 @@
+<html>
+<head>
+<style>
+#balloon {
+width: 200px;
+height: 200px;
+background-color: red;
+border-radius:50%;
+margin-top: 50vh;
+transform: translateY(-50%);
+}
+</style>
+<script type="text/javascript">
+    function ballEdit() {
+        var ball = document.getElementById("balloon");
+
+        if (!ball.style.backgroundColor) {
+            ball.style.backgroundColor = "red";
+            var size = 200;
+        }
+        else
+            var size = ball.style.width;
+        if ((size = parseInt(size, 10)) < 415)
+            size += 10;
+        else
+            size = 200;
+        if (ball.style.backgroundColor === "red"){
+            ball.style.height = size + "px";
+            ball.style.width = size + "px";
+            ball.style.backgroundColor = "green";
+        }
+        else if (ball.style.backgroundColor === "green") {
+            ball.style.height = size + "px";
+            ball.style.width = size + "px";
+            ball.style.backgroundColor = "blue"
+        }
+        else if (ball.style.backgroundColor === "blue") {
+            ball.style.height = size + "px";
+            ball.style.width = size + "px";
+            ball.style.backgroundColor = "red";
+        }
+    }
+
+    function ballDown() {
+        var ball = document.getElementById("balloon");
+        var size = ball.style.width;
+        if ((size = parseInt(size, 10)) > 200) {
+            size -= 5;
+        }
+        if (!ball.style.backgroundColor)
+            ball.style.backgroundColor = "red";
+        if (!size)
+            size = 200;
+        if (ball.style.backgroundColor === "red"){
+            ball.style.height = size + "px";
+            ball.style.width = size + "px";
+            ball.style.backgroundColor = "blue";
+        }
+        else if (ball.style.backgroundColor === "green") {
+            ball.style.height = size + "px";
+            ball.style.width = size + "px";
+            ball.style.backgroundColor = "red"
+        }
+        else if (ball.style.backgroundColor === "blue") {
+            ball.style.height = size + "px";
+            ball.style.width = size + "px";
+            ball.style.backgroundColor = "green";
+        }
+    }
+</script>
+</head>
+<body>
+<center><div id="balloon" onclick="ballEdit();" onmouseout="ballDown();"></div></center>
+</body>
+</html>
