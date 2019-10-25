@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<style>
+.container {
+    box-shadow: 0px 10px 20px 0px rgba(0, 23, 51, 0.09);
+    border-radius: 5px;
+    flex: 0 0 30%;
+    max-width: 30%;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+}
+.container input {
+    margin-bottom:30px;
+}
+form {
+    padding-top: 30px;
+}
+.button {
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    width: 180px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #ff3368;
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color:white;
+}
+</style>
+<script type="text/javascript">
+setInterval(function(){ alert("Please, use me..."); }, 30000);
+function calcerror() {
+    alert("Error :(");
+}
+
+function calc () {
+    var slnum = document.getElementById("lnum").value;
+    var op = document.getElementById("op").value;
+    var srnum = document.getElementById("rnum").value;
+    lnum = parseInt(slnum);
+    rnum = parseInt(srnum);
+    if (isNaN(lnum) || isNaN(rnum) || slnum.length !== lnum.toString().length || srnum.length !== rnum.toString().length || lnum < 0 || rnum < 0)
+        return (calcerror());
+    if (op === "+")
+        lnum += rnum;
+    else if (op === "-")
+        lnum -= rnum;
+    else if (op === "*")
+        lnum *= rnum;
+    else if (op === "/")
+        lnum /= rnum;
+    else if (op === "%")
+        lnum %= rnum;
+    else
+        return (calcerror());
+    if (lnum == "Infinity" || isNaN(lnum)) {
+        console.log("It’s over 9000!");
+        return (alert("It’s over 9000!"));
+    }
+    console.log(lnum);
+    alert(lnum);
+}
+</script>
+</head>
+<body>
+<center><div class="container">
+    <form onsubmit="return calc()">
+    <input id="lnum" type="text"> <select id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input id="rnum" type="text"> <br />
+    <input class="button" type="submit" value="Try me!"></form>
+</div></center>
+</body>
+</html>
