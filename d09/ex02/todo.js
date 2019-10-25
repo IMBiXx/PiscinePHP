@@ -12,7 +12,7 @@ function newTodo(todoName, key) {
     if (key === -1) {
         i = 0;
         key = 0;
-        var save = Object.keys(sessionStorage);
+        var save = Object.keys(localStorage);
         save.sort(function(a, b){return a-b});
         console.log(save);
         while (save[i]) {
@@ -34,7 +34,7 @@ function newTodo(todoName, key) {
     else {
         document.getElementById("ft_list").appendChild(newTodo);
     }
-        sessionStorage.setItem(key, todoName);
+        localStorage.setItem(key, todoName);
 }
 
 function delTodo(key) {
@@ -42,16 +42,16 @@ function delTodo(key) {
     if (confirm("Confirmer la suppression de la tâche")) {
         var toDel = document.getElementById(node);
         toDel.remove();
-        sessionStorage.removeItem(key);
+        localStorage.removeItem(key);
     }
 }
 
 function restoreSession() {
     var todoName;
-    var save = Object.keys(sessionStorage);
+    var save = Object.keys(localStorage);
     save.sort(function(a, b){return a-b});
     for (var i = 0; save[i]; i++) {
-        todoName = sessionStorage.getItem(save[i]);
+        todoName = localStorage.getItem(save[i]);
         newTodo(todoName, save[i]);
     }
 }
